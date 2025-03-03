@@ -3,11 +3,12 @@ set -o errexit
 set -o pipefail
 set -o nounset
 
-make download
+# make download
 
 make clean
 make
 docker-compose up -d postgres
+
 make import-osm
 make import-sql
 make analyze-db
